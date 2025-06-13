@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string2</title>
+</head>
+
+<body>
+
+<div id="wrapper"></div>
+<div id="wrapper2"></div>
+<div id="wrapper3"></div>
+<div id="wrapper4"></div>
+
+
+
+
+    <script>
+
+        const data = `
+            하나
+            두울
+            세엣    
+        `
+
+        const htmlFormat = `
+        
+        <button>버튼</button>
+        
+        `
+
+        document.querySelector('#wrapper').innerText = htmlFormat;
+
+        document.querySelector('#wrapper2').innerHTML = htmlFormat;
+
+
+
+        const htmlFormat2 = `
+
+        <ul>
+            <li>하나</li>
+            <li>두울</li>
+            <li>세엣</li>
+
+        </ul>
+        `
+
+        document.querySelector('#wrapper3').innerText = htmlFormat2
+        document.querySelector('#wrapper4').innerHTML = htmlFormat2
+
+        
+        
+        
+
+
+
+    </script>
+
+
+</body>
+
+</html>

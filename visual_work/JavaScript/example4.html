@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example4</title>
+
+    <style>
+        .box {
+            width: 500px;
+            height: 500px;
+            border: 1px solid red;
+            margin: 0 auto;
+            cursor: crosshair;
+            position: relative;
+        }
+
+        .point {
+            width: 10px;
+            height: 10px;
+            background-color: yellowgreen;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            pointer-events: none;
+
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="box">
+
+        <div class="point">
+
+    </div>
+
+    </div>
+
+
+
+    <script>
+        const box = document.querySelector('.box');
+        const point = document.querySelector('.point');
+
+        box.addEventListener('mousemove', (e)=>{
+            const X = e.offsetX; 
+            const Y = e.offsetY;
+
+            point.style.top = `${Y}px`;
+            point.style.left = `${X}px`;
+
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eventListener6</title>
+
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            cursor: pointer;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">div1</div>
+        <div class="box">div2</div>
+        <div class="box">div3</div>
+        <div class="box">div4</div>
+        <div class="box">div5</div>
+
+        <script>
+            const boxes = document.querySelectorAll('.box')
+
+
+             boxes.forEach((a) => {
+                 a.addEventListener('click', () => {
+                     a.style.backgroundColor = 'yellow'
+                 })
+             })
+ 
+
+            
+            /*for(let i = 0; i< boxes.length; i++){
+            boxes[i].addEventListener('click', ()=>{
+                boxes[i].style.backgroundColor = 'yellow'
+            })
+        }
+            */
+        </script>
+
+    </div>
+</body>
+
+</html>

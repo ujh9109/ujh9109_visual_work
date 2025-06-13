@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json3</title>
+</head>
+
+<body>
+    <button id="getBtn">이름 목록 받아오기</button>
+    <button id="getBtn2">이름 목록 받아오기2</button>
+
+    <ul>
+
+    </ul>
+    <script>
+        
+        
+
+
+        document.querySelector('#getBtn').addEventListener('click', () => {
+            //fetch 함수를 이용
+            fetch("http://127.0.0.1:5500/JavaScript/names.json")
+                .then((res) => {
+                    return res.text();
+                })
+                .then((data) => {
+                    console.log(data);
+
+
+
+                    const names = JSON.parse(data)
+
+                    /*for(let i =0; i<names.length;i++){
+                        const li = document.createElement('li')
+                        li.innerText = names[i];
+                        document.querySelector('ul').append(li)
+                    }*/
+
+                    names.forEach((member) => {
+                        const li = document.createElement('li')
+                        li.innerText = member;
+                        document.querySelector('ul').append(li)
+                    })
+                });
+
+        });
+
+        document.querySelector('#getBtn2').addEventListener('click', ()=>{
+            fetch("names.json")
+            .then((res) => {
+                return res.json()
+            })
+            .then((data)=>{
+               console.log(data)
+               data.forEach((member)=> {
+                const li = document.createElement('li');
+                li.innerText = member;
+                document.querySelector('ul').append(li)
+               })
+
+            })
+
+        })
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step04_document.html</title>
+</head>
+
+<body>
+    <p>p1</p>
+    <p>p2</p>
+    <p>p3</p>
+    <p>p4</p>
+    <p>p5</p>
+    <button onclick="change()">변경하기</button>
+    <button onclick="change2()">p2 변경하기</button>
+    <button onclick="change3()">p3 변경하기</button>
+    
+
+    <script>
+
+        
+        function change() {
+
+            document.querySelector('p').innerText = 'kimkura'
+            document.querySelector('p').style.color = 'red'
+
+        }
+        let change2 = function( ){ 
+            document.querySelectorAll('p')[1].innerText = 'Park'
+            document.querySelectorAll('p')[1].style.color = 'rgb(0,255,255)'
+        }
+        let change3 = ( ) => {
+            document.querySelectorAll('p')[2].innerText = 'LEE'
+            document.querySelectorAll('p')[2].style.color = '#0000FF'
+        }
+        
+
+        const p4 = document.querySelectorAll('p')[3]
+
+        p4.addEventListener('mouseenter', () => {
+            p4.innerText = 'OH';
+            p4.style.color = 'green'
+        });
+        p4.addEventListener('mouseout', () => {
+            p4.innerText = 'p4';
+            p4.style.color = 'black'
+        });
+
+        const p5 = document.querySelectorAll('p')[4]
+
+        p5.addEventListener('mouseout', () => {
+            p5.innerText = 'YU'
+            p5.style.color='grey'
+        });
+        p5.addEventListener('mouseenter', () => {
+            p5.innerText = 'p5'
+            p5.style.color = 'black'
+        });
+
+        
+
+
+    </script>
+</body>
+
+</html>

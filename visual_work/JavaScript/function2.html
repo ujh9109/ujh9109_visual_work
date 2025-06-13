@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step02_function.html</title>
+</head>
+
+<body>
+    <h1>function의 return값</h1>
+    <script>
+        //let getGreeting = function(){};
+        //let getGreeting => (){};
+
+        function getGreeting() {
+            const greet = "안녕하세요, 반갑습니다.";
+            return greet;
+        }
+        function getSum(num1, num2) {
+            const result = num1 + num2;
+            return result;
+        }
+
+        const myUtil = {
+            version:"1.0",
+            hole: function(){
+                //실행할 자바스크립트 여러 줄 작성할 수 있음.
+                //오브젝트의 중괄호와 함수의 중괄호는 작성법이 다르다.
+                console.log("구멍을 뚫어요!");
+                console.log("윙~~~~");
+                console.log("구멍 뚫기 성공");
+            },
+            getGreeting1: function(){
+                const greeting1 = 'hello!';
+                return greeting1;
+            },
+            getMember: function(){
+                return {num:1, name:"김구라", addr:"노량진"};
+            }
+        };
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

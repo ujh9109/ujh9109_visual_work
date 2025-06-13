@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if3</title>
+</head>
+
+<body>
+    <input type="text" id="inputJunsu" placeholder="정수입력...">
+    <button id="checkBtn">판별하기</button>
+    <button id="checkBtn2">판별하기2</button>
+    <button id="checkBtn3">판별하기3</button>
+    <button id="checkBtn4">판별하기4</button>
+
+
+
+    <p>0-100 사이의 정수를 입력하세요</p>
+    <p id="result"></p>
+
+    <script>
+        /*정수를 입력하고 판결하기 버튼을 눌렀을 때, 정수가 90 이상이면 A학점
+        80 이상이면 B학점
+        70 이상이면 C학점
+        60 -> D학점
+        그 이하 -> F학점*/
+
+        document.querySelector('#checkBtn').addEventListener('click', () => {
+            const num = document.querySelector('#inputJunsu').value
+
+            if (num >= 90) {
+                document.querySelector('#result').innerText = 'A학점'
+            }
+            else if (num >= 80) {
+                document.querySelector('#result').innerText = 'B학점'
+            }
+            else if (num >= 70) {
+                document.querySelector('#result').innerText = 'C학점'
+            }
+            else if (num >= 60) {
+                document.querySelector('#result').innerText = 'D학점'
+            }
+            else {
+                document.querySelector('#result').innerText = 'F학점'
+
+            }
+        })
+
+        document.querySelector('#checkBtn2').addEventListener('click', () => {
+            const num = document.querySelector('#inputJunsu').value
+            let grade;
+
+
+            if (num >= 90) {
+                grade = 'A'
+            }
+            else if (num >= 80) {
+                grade = 'B'
+
+            }
+            else if (num >= 70) {
+                grade = 'C'
+
+            }
+            else if (num >= 60) {
+                grade = 'D'
+
+            }
+            else {
+                grade = 'F'
+
+
+            }
+            document.querySelector('#result').innerText = `${grade}학점`
+        })
+
+        document.querySelector('#checkBtn3').addEventListener('click', () => {
+            const num = document.querySelector('#inputJunsu').value
+            let grade = "F";
+            //grade의 초기값을 부여한다.
+
+
+            if (num >= 90) {
+                grade = 'A'
+            }
+            else if (num >= 80) {
+                grade = 'B'
+
+            }
+            else if (num >= 70) {
+                grade = 'C'
+
+            }
+            else if (num >= 60) {
+                grade = 'D'
+
+            }
+
+            //초기값을 이미 F로 지정하였기 때문에 else 부분을 한번 더 작성하지 않아도 된다.
+
+            document.querySelector('#result').innerText = `${grade}학점`
+        })
+
+        document.querySelector('#checkBtn4').addEventListener('click', () => {
+            //입력한 정수를 숫자로 바꿔서 Junsu라는 상수에 넣기기
+            const Junsu = Number(document.querySelector('#inputJunsu').value);
+
+            //Junsu 는 NaN일 가능성이 있다.
+            if (isNaN(Junsu)) {
+                alert('숫자 형식으로 입력하세요');
+                return;
+            }
+            const invalidJunsu = (Junsu >= 0) && (Junsu <= 100)
+            if (!invalidJunsu) {
+                alert('0-100 사이의 숫자를 입력하세요')
+            }
+            const num = document.querySelector('#inputJunsu').value
+            let grade;
+
+
+            if (num >= 90) {
+                grade = 'A'
+            } else if (num >= 80) {
+                grade = 'B'
+
+            } else if (num >= 70) {
+                grade = 'C'
+
+            } else if (num >= 60) {
+                grade = 'D'
+
+            }
+            else {
+                grade = 'F'
+
+
+            }
+            document.querySelector('#result').innerText = `${grade}학점`
+        })
+
+
+
+    </script>
+</body>
+
+</html>

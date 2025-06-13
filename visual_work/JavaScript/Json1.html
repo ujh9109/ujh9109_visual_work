@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Json1</title>
+</head>
+
+<body>
+    <script>
+        const mm1 = { num: 1, name: '김구라', addr: "노량진" }
+        const json1 = '{"num":2, "name":"해골", "addr":"행신동"}'
+        const json2 = '["김구라", "해골", "원숭이"]'
+
+        //json 형식의 문자열을 이용해서 실제 object나 array를 얻어내기
+        const result1 = JSON.parse(json1);
+        const result2 = JSON.parse(json2);
+
+        //object나 array를 json 형식의 문자열로 변경할 수도 있다.
+        const result3 = JSON.stringify({num:1, name:"원숭이", addr:"동물원"})
+        const result4 = JSON.stringify(["김구라","해골","원숭이"])
+
+    </script>
+</body>
+
+</html>

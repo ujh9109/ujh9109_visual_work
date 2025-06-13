@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.jkiss.dbeaver.ui.extra.feature"
+      label="%featureName"
+      version="25.0.5.202505181758"
+      provider-name="%providerName">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <plugin id="org.jkiss.dbeaver.tasks.ui" version="1.0.133.202505181758" />
+   <plugin id="org.jkiss.dbeaver.tasks.ui.view" version="1.0.104.202505181758" />
+   <plugin id="org.jkiss.dbeaver.tasks.native.ui" version="1.0.133.202505181758" />
+   <plugin id="org.jkiss.dbeaver.tasks.sql.ui" version="1.0.121.202505181758" />
+   <plugin id="org.jkiss.dbeaver.ui.config.migration" version="2.1.218.202505181758" />
+   <plugin id="org.jkiss.dbeaver.cmp.simple.ui" version="6.0.151.202505181758" />
+   <plugin id="org.jkiss.dbeaver.ui.dashboard" version="1.0.152.202505181758" />
+   <plugin id="org.jkiss.dbeaver.ui.editors.locks" version="1.0.200.202505181758" />
+
+</feature>

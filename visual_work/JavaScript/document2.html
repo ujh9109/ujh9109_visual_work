@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    p{
+        color: red
+    }
+
+    .my-class{
+        background-color: yellow;
+    }
+    .your-class{
+        border: 5px solid blue
+    
+    }
+    #one{
+        font-size: 30px;
+    }
+</style>
+
+
+</head>
+
+<body>
+    <p>p1</p>
+    <p class="my-class">p2</p>
+    <p id="one" class="my-class your-class">p3</p>
+    <p id="two" class="my-class your-class">p4</p>
+    <p>p5</p>
+
+    
+
+    <script>
+        
+        document.querySelector('#one').style.backgroundColor='green'
+        //document.querySelectorAll('#one')[0].style.backgroundColor = 'green'
+       
+        
+        document.querySelector('#two').style.color = 'pink'
+        //document.querySelectorAll('#two')[0].style.color = 'pink'
+        
+
+    </script>
+
+</body>
+</html>

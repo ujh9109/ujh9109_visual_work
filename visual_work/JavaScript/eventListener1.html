@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eventListener1</title>
+</head>
+
+<body>
+    <button id="myBtn">press</button>
+    <script>
+        document.querySelector('#myBtn').addEventListener('click', () => {
+            console.log("버튼을 눌렀네?");
+        })
+
+        setTimeout(() => {
+            alert('페이지 로딩 후 10초가 경과 했습니다.')
+        }, 1000 * 10)
+
+        setInterval(()=>{
+            console.log('3초마다 한번씩 호출됩니다.')
+        }, 1000*3)
+    </script>
+</body>
+
+</html>

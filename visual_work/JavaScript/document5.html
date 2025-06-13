@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="inputMsg">
+    <button onclick="send()">전송</button>
+    <p></p>
+    <p></p>
+    <p></p>
+    <script>
+        let send = () => {
+            const msg = document.querySelector('#inputMsg').value;
+            document.querySelectorAll('p')[0].innerText = msg;
+            document.querySelectorAll('p')[1].innerText = msg;
+            document.querySelectorAll('p')[2].innerText = msg;
+           
+
+            document.querySelector('#inputMsg').value = '';
+        };
+    </script>
+</body>
+
+</html>

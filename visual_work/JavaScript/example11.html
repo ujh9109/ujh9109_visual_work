@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example11</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <img src="images/SouthKorea.png">
+    </div>
+
+    <script>
+
+        const img2 = document.createElement('img')
+        img2.setAttribute("src", "images/Spain.png")
+        document.querySelector('.container').append(img2)
+
+        const img3 = `<img src="images/UK.png">`
+        document.querySelector('.container').insertAdjacentHTML('beforeend', img3)
+
+        
+        const imageUrl = "images/USA.png"
+        const img4 = `<img src="${imageUrl}">`
+        document.querySelector('.container').insertAdjacentHTML('beforeend', img4)
+    </script>
+</body>
+
+</html>

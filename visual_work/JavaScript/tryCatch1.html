@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>trycatch1</title>
+</head>
+
+<body>
+    <h1>javascript에서 error 처리하기</h1>
+    <input type="text" placeholder="입력중..." id="inputJson">
+    <button id="parseBtn">파싱하기</button>
+    <p id="result"></p>
+    <ul>
+        
+    </ul>
+
+
+    <script>
+
+        document.querySelector('#parseBtn').addEventListener('click', () => {
+            const json = document.querySelector('#inputJson').value
+            try {
+                const data = JSON.parse(json)
+                console.log(data)
+
+                document.querySelector('#result').innerText = '에러 없이 성공적으로 파싱했습니다'
+                
+                data.forEach((a)=>{
+
+                const li = `<li>${a}</li>`
+                document.querySelector('ul').insertAdjacentHTML('beforeend',li)
+                
+
+            })
+            
+            }
+            
+            catch(e){
+
+                console.log(e.message);
+                document.querySelector('#result').innerText=`에러 발생! 정보: ${e.message}`
+                document.querySelector('ul').innerHTML= ''
+            }
+        
+        
+        })
+
+
+
+    </script>
+
+</body>
+
+</html>

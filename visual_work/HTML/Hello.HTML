@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=!, initial-scale=1.0">
+    <title>나의 페이지</title>
+    <style>
+        h1{
+            color: green;
+        }
+        h2{
+            color: pink
+        }
+        button{
+            color: red
+        }
+    </style> 
+    
+       
+</head>
+<body>
+    <h1>안녕하세요 저는 유재황 입니다!</h1>
+    <h2>나의 첫번째 웹페이지</h2>
+    <button onclick="cliked()" onmouseout="outed">클릭</button>
+
+    <script>
+        function cliked(){
+        document.querySelector("button").style.width = "100px";
+        document.querySelector("button").style.height = "100px";
+        }
+
+        function outed(){
+        document.querySelector("button").style.width = "50px";
+        document.querySelector("button").style.height = "50px";
+        }
+
+
+    </script>
+</body>
+</html>

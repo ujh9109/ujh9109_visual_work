@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if2</title>
+</head>
+
+<body>
+    <input type="text" id="inputNum" placeholder="숫자를 입력하세요...">
+    <button id="checkBtn">판별하기</button>
+    <button id="checkBtn2">판별하기2</button>
+    <button id="checkBtn3">판별하기3</button>
+
+
+    <p id="result"></p>
+
+
+    <script>
+        /* 어떤 숫자를 입력받아서 해당 숫자가 짝수이면 짝수입니다.
+            홀수이면 홀수입니다 를 출력하려고 한다.*/
+        document.querySelector('#checkBtn').addEventListener('click', () => {
+            const msg1 = '짝수입니다.'
+            const msg2 = '홀수입니다.'
+            const num = document.querySelector('#inputNum').value;
+
+            if (num % 2 == 0) {
+                document.querySelector('#result').innerText = msg1
+            }
+            if (num % 2 == 1) {
+                document.querySelector('#result').innerText = msg2
+            }
+           
+        });
+
+        document.querySelector('#checkBtn2').addEventListener('click', () => {
+            const msg1 = '짝수입니다.'
+            const msg2 = '홀수입니다.'
+            const num = document.querySelector('#inputNum').value;
+
+            if (num % 2 == 0) {
+                document.querySelector('#result').innerText = msg1
+            }
+            else{
+                document.querySelector('#result').innerText = msg2
+            };
+            
+        });
+
+        document.querySelector('#checkBtn3').addEventListener('click', () => {
+            const msg1 = '짝수입니다.'
+            const msg2 = '홀수입니다.'
+            const num = document.querySelector('#inputNum').value;
+
+            if (num % 2 == 1) {
+                document.querySelector('#result').innerText = msg2
+            }
+            else{
+                document.querySelector('#result').innerText = msg1
+            };
+            
+        });
+    </script>
+
+</body>
+
+</html>

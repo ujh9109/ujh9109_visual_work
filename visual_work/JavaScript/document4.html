@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inputMsg" placeholder="메시지 입력...">
+    <button onclick="msg()">전송</button>
+    <p id="result">...</p>
+    <script>
+        function msg(){
+            const msg = document.querySelector('#inputMsg').value
+            document.querySelector('#result').innerText = msg
+            document.querySelector('#inputMsg').value = ''
+        }
+    </script>
+</body>
+</html>

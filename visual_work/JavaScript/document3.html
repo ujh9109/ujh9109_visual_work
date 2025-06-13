@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>p1</p>
+    <p class="my-class">p2</p>
+    <p id="one" class="my-class your-class">p3</p>
+    <p id="two" class="my-class your-class">p4</p>
+    <p>p5</p>
+
+    <button onclick="change()">your-class 글자크기 변경</button>
+    <button onclick="refont()">글자크기 복구</button>
+    
+
+
+    <script>
+        document.querySelectorAll('.my-class')[0].style.color = 'red'
+        document.querySelectorAll('.my-class')[1].style.color = 'rgb(255,0,0)'
+        document.querySelectorAll('.my-class')[2].style.color = '#ff0000'
+
+
+        document.querySelectorAll('.your-class')[0].style.backgroundColor = 'yellow'
+        document.querySelectorAll('.your-class')[1].style.backgroundColor = 'yellow'
+
+        let change = () => {
+            document.querySelectorAll('.your-class')[0].style.fontSize = '20px'
+            document.querySelectorAll('.your-class')[1].style.fontSize = '20px'
+        }
+        
+        
+        let refont = () => {
+        document.querySelectorAll('.your-class')[0].style.fontSize = '16px'
+        document.querySelectorAll('.your-class')[1].style.fontSize = '16px'
+         
+        }
+        
+       
+
+        
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            width: 200px;
+
+
+
+        }
+
+        thead {
+            background-color: lightcyan;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button id="getBtn">국가목록 받아오기</button>
+        <h1>국가목록</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>아이디</th>
+                    <th>국가명</th>
+                    <th>국기</th>
+                    <th>수도</th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+
+        document.querySelector('#getBtn').addEventListener('click', () => {
+            fetch("countries.json")
+                .then((res) => {
+                    return res.json()
+                })
+                .then((data) => {
+                    console.log(data)
+                    data.forEach((country) => {
+
+                        const newTd = `
+                    <tr>
+                        <td>${country.id}</td>    
+                        <td>${country.name}</td>    
+                        <td><img src="${country.imageUrl}" class="flag"></td>    
+                        <td>${country.capital}</td>    
+                    </tr>
+                    `
+                        document.querySelector('tbody').insertAdjacentHTML('beforeend', newTd)
+                        document.querySelector('tbody').style.textAlign = 'center'
+
+
+                    })
+                    const list = document.querySelectorAll('.flag');
+                    list.forEach((img) => {
+                        img.style.width = '50px'
+                    })
+                })
+        })
+
+    </script>
+
+
+</body>
+
+</html>

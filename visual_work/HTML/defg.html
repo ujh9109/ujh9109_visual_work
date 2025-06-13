@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1234</title>
+    <style>
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: peru;
+            padding: 20px;
+        }
+
+        .header,
+        .content,
+        .footer {
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .header {
+            background-color: blue;
+            color: aliceblue;
+        }
+
+        .content {
+            background-color: chartreuse;
+        }
+
+        .footer {
+            background-color: crimson;
+            text-align: center;
+        }
+        table{
+            width: 60%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-family: 'Arial', sans-serif;
+        }
+        th,td{
+            border: 1px solid #333;
+            padding: 12px;
+            text-align: center;
+        }
+        th{
+            background-color: #4caf50;
+            color: white;
+        }
+        tr:nth-child(even){
+            background-color: #f9f9f9;
+        }
+        tr:hover{
+            background-color: #ffeb3b;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>안녕하세요.</h1>
+    <p>이것은 HTML 페이지의 본문입니다.</p>
+    <a href="https://www.naver.com/">네이버로 이동</a>
+    <a href="https://www.naver.com/" target="_blank">네이버로 이동2</a>
+    <p>hello, world!</p>
+    <div>
+        <h1>안녕하세요2.</h1>
+        <p>이 문장은 블록 요소로 처리되는 문단입니다.</p>
+    </div>
+    <p>이 문장에는 <span>인라인 요소</span>가 포함되어 있습니다.</p>
+    <div class="container">
+        <div class="header">헤더 영역.</div>
+        <div class="content">콘텐츠 영역.</div>
+        <div class="footer">푸터 영역.</div>
+    </div>
+    <p>이것은 첫 번째 문단입니다. 문단 태그를 사용하여 텍스트를 문단 단위로 나눌 수 있습니다. </p>
+    <p>이것은 두 번째 문단입니다. 문단 태그는 그룹화하여 읽기 쉽고 정돈된 형태로 표시해 줍니다. </p>
+
+    <h1>이것은 페이지의 주요 제목입니다.</h1>
+    <p>여기에는 페이지의 주요 내용을 소개하는 문장이 올 수 있습니다.
+    <h2>이것은 첫 번째 섹션의 제목입니다.</h2>
+    <p>첫 번째 섹션의 내용을 설명하는 문단입니다.</p>
+    <h3>첫 번째 소제목입니다.</h3>
+    <p>소제목에 대한 상세한 설명이 들어갈 수 있습니다.</p>
+    <h2>이것은 두 번째 섹션의 제목입니다.</h2>
+    <p>두 번째 세션의 내용을 설명하는 문단입니다.</p>
+
+    <h2>과일목록</h2>
+    <ul>
+        <li>포도</li>
+        <li>사과</li>
+        <li>바나나</li>
+        <li>체리</li>
+    </ul>
+
+    <h2>순서 있는 목록</h2>
+    <ol>
+        <li>html 배우기</li>
+        <li>css 배우기</li>
+        <li>javascript 배우기</li>
+        <li>프론트엔드 개발 완성</li>
+    </ol>
+
+    <h2>학생 성적표</h2>
+    <table>
+        <tr>
+            <th>이름</th>
+            <th>과목</th>
+            <th>점수</th>
+        </tr>
+        <tr>
+            <td>홍길동</td>
+            <td>수학</td>
+            <td>90</td>
+        </tr>
+        <tr>
+             <td>이몽룡</td>
+             <td>영어</td>
+             <td>85</td>
+        </tr>
+    </table>
+</body>
+
+
+</html>

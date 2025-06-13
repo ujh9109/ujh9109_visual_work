@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if1</title>
+</head>
+
+<body>
+
+    <h1>단일 if문 테스트</h1>
+    <input type="text" id="inputMsg" placeholder="메시지 입력중...">
+    <button id="sendBtn">전송</button>
+    <button id="sendBtn2">전송2</button>
+    <button id="sendBtn3">전송3</button>
+    <p id="target">메시지는 10글자 이내로 입력하세요</p>
+
+    <script>
+
+        document.querySelector('#sendBtn').addEventListener('click', () => {
+            //입력한 문자열을 읽어온다.
+            const msg = document.querySelector('#inputMsg').value;
+            //만일 10글자 이내로 입력하면 전송한다.
+            if (msg.length <= 10) {
+                document.querySelector('#target').innerText = msg;
+               
+            }
+        })
+
+        document.querySelector('#sendBtn2').addEventListener('click', () => {
+            const msg = document.querySelector('#inputMsg').value;
+            if (msg.length > 10) {
+                //만일 10글자가 초과되면 함수를 여기서 끝내기.
+                return;
+            }
+            document.querySelector('#target').innerText = msg;
+        })
+
+        document.querySelector('#sendBtn3').addEventListener('click', () => {
+
+            const msg = document.querySelector('#inputMsg').value;
+            // if문 블록에서 실행할 code가 1 line이라면 {}는 생략 가능하다다
+            if (msg.length > 10) return;
+
+            document.querySelector('#target').innerText = msg;
+
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas2</title>
+    <style>
+        canvas {
+            cursor: crosshair;
+            margin: 0 auto;
+            border: 1px solid red;
+            display: block;
+            /*인라인 요소이기 때문에, 블록 요소로 만들어야 함.*/
+        }
+
+        .panel {
+            width: 500px;
+            margin: 0 auto;
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="panel">
+        <input type="color" id="inputColor">
+        <select id="selectWidth">
+            <option>2</option>
+            <option>4</option>
+            <option>6</option>
+            <option>8</option>
+            <option>10</option>
+            <option>12</option>
+            <option>14</option>
+            <option>16</option>
+            <option>18</option>
+            <option>20</option>
+
+
+        </select>
+    </div>
+
+    <canvas height="500" width="500" id="myCanvas"></canvas>
+
+
+
+
+
+
+
+
+
+    <script>
+
+
+
+        const canvas = document.querySelector('#myCanvas')
+        const ctx = canvas.getContext("2d")
+
+
+
+
+
+        let selectedWidth = 2
+        const sWidth = document.querySelector('#selectWidth')
+        sWidth.addEventListener('change', (e) => {
+            selectedWidth = sWidth.value;
+            selectedWidth = e.target.value;
+        })
+
+
+        let selectedColor = 'black';
+        const panel = document.querySelector('#inputColor')
+        panel.value = selectedColor
+
+        panel.addEventListener('input', (e) => {
+            selectedColor = panel.value;
+            selectedColor = e.target.value
+        })
+
+        let isDrawing = false
+
+        document.querySelector("canvas").addEventListener("mousedown", (e) => {
+            isDrawing = true
+
+
+            //selectedColor, selectedWidth 사용
+            ctx.strokeStyle = selectedColor
+            ctx.lineWidth = selectedWidth
+
+            //둥글게 
+            ctx.lineCap = 'round'
+
+            //모서리 부분이 둥글게
+            ctx.lineJoin = 'round'
+
+            //선을 그릴 준비를 하고 시작점으로 이동.
+            ctx.beginPath();
+            ctx.moveTo(e.offsetX, e.offsetY)
+
+
+
+
+
+
+        })
+        document.querySelector("canvas").addEventListener("mouseup", () => {
+            isDrawing = false
+            //마무리 작업
+            ctx.closePath();
+
+        })
+        document.querySelector("canvas").addEventListener("mouseout", () => {
+            isDrawing = false
+            //마무리 작업
+            ctx.closePath();
+        })
+
+
+        document.querySelector("canvas").addEventListener("mousemove", (e) => {
+
+            if (isDrawing) {
+                const x = e.offsetX;
+                const y = e.offsetY;
+                ctx.lineTo(x, y)
+                ctx.stroke()
+            }
+        });
+
+
+
+    </script>
+</body>
+
+</html>

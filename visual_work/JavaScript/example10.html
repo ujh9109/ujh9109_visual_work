@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step07_example4.html</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            width: 200px;
+        }
+
+        thead {
+            background-color: lightcyan;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>회원목록</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>이름</th>
+                    <th>주소</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                
+            </tbody>
+        </table>
+    </div>
+
+    <button id="getBtn">회원목록 받아오기</button>
+    <script>
+
+
+        document.querySelector('#getBtn').addEventListener('click', ()=>{
+            fetch("members.json")
+            .then((res)=>{
+                return res.json()
+            })
+            .then((data)=>{
+                console.log(data)
+                data.forEach((member)=>{
+                const newTd = `
+                <tr>
+                    <td>${member.num}</td>
+                    <td>${member.name}</td>
+                    <td>${member.addr}</td>
+                </tr>
+                `
+                
+                document.querySelector('tbody').insertAdjacentHTML('beforeend', newTd)
+                })
+            })
+        })
+        
+
+    </script>
+</body>
+
+</html>

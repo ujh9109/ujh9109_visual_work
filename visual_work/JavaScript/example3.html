@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example3</title>
+
+    <style>
+        #one {
+
+            width: 100px;
+
+            /*margin-left가 변경될 때 1초 동안 변경되도록 시간 텀을 두어라*/
+            transition: margin-left 0.5s ease-out
+        }
+
+        #two {
+            width: 100px;
+            transform: margin-left 2s ease-out;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <button id="movebtn">오른쪽 이동</button>
+    <button id="cancle">왼쪽 이동</button>
+    <button id="reset">원위치</button>
+    <br>
+
+    <img id="one" src="https://picsum.photos/id/237/200/300">
+    <br>
+    <img id="two" src="https://picsum.photos/seed/picsum/200/300">
+
+
+
+    <script>
+
+        let mLeft = 0;
+
+
+        const cc = document.querySelector('#cancle')
+        const rs = document.querySelector('#reset')
+        const btn = document.querySelector('#movebtn')
+        const img1 = document.querySelector('#one')
+        const img2 = document.querySelector('#two')
+
+
+        btn.addEventListener('click', () => {
+            mLeft = mLeft + 100;
+            img1.style.marginLeft = `${mLeft}px`
+            img2.style.marginLeft = `${mLeft}px`
+            
+
+        })
+
+
+
+        cc.addEventListener('click', () => {
+            mLeft = mLeft - 100;
+            img1.style.marginLeft = `${mLeft}px`
+            img2.style.marginLeft = `${mLeft}px`
+            
+        })
+
+      
+
+        rs.addEventListener('click', () => {
+            mLeft = 0
+            img1.style.marginLeft = `${mLeft}px`
+            img2.style.marginLeft = `${mLeft}px`
+           
+        })
+
+        setInterval(()=>{
+            mLeft = mLeft + 100
+            img1.style.marginLeft = `${mLeft}px`
+            img2.style.marginLeft = `${mLeft}px`
+        }, 1000*3)
+
+        setInterval(()=>{
+            mLeft = 0
+            img1.style.marginLeft = `${mLeft}px`
+            img2.style.marginLeft = `${mLeft}px`
+        }, 1000*10)
+
+
+    </script>
+
+
+</body>
+
+</html>

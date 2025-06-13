@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eventListener4</title>
+</head>
+
+<body>
+    <button id="printBtn">친구목록 출력하기</button>
+    <button id="printBtn2">친구목록 출력하기2</button>
+
+    <ul id="nameList">
+
+    </ul>
+
+    <script>
+        const friends = ['김구라', '해골', '원숭이', '주뎅이', '덩어리', '누구게', '아무개'];
+
+        friends.forEach((a) => {
+            console.log(a)
+        })
+
+
+        document.querySelector('#printBtn').addEventListener('click', () => {
+
+
+            for (let i = 0; i < friends.length; i++) {
+                const li = document.createElement('li')
+                li.innerText = friends[i]
+                document.querySelector('#nameList').append(li)
+
+            }
+        })
+
+        document.querySelector('#printBtn2').addEventListener('click', () => {
+
+           
+            friends.forEach((a) => {
+
+                const li2 = document.createElement('li');
+                li2.innerText = a
+                document.querySelector('#nameList').append(li2);
+            })
+            
+            
+            })
+            
+
+    
+
+
+    </script>
+</body>
+
+</html>
